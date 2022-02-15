@@ -47,7 +47,7 @@ class WeatherData extends ChangeNotifier {
     Location location = Location();
     await location.setCurrentLocation();
 
-    const apiKey = '646a8e323bd2cbd8a971ae2aa496a424';
+    const String apiKey = String.fromEnvironment('API_KEY', defaultValue: '');
     final weatherData = await Request.get(
       '$apiBaseUrl/onecall?lat=${location.latitude}&lon=${location.longitude}&exclude=minutely&appid=$apiKey&units=metric',
     );
