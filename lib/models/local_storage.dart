@@ -11,8 +11,9 @@ class LocalStorage {
     perf.setString(key, value);
   }
 
-  static Future<T> get<T>(String key) async {
+  // T or null
+  static Future<dynamic> get(String key) async {
     SharedPreferences perf = await SharedPreferences.getInstance();
-    return perf.get(key) as T;
+    return perf.get(key);
   }
 }

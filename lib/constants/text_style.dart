@@ -52,7 +52,7 @@ class WeatherTextStyle {
   );
 
   static const TextStyle mediumRegularGrey = TextStyle(
-    color: Grey.translucent,
+    color: Grey.regular,
     fontSize: 23.0,
     fontFamily: 'Khula',
     fontWeight: FontWeight.w600,
@@ -66,7 +66,7 @@ class WeatherTextStyle {
   );
 
   static const TextStyle regularGrey = TextStyle(
-    color: Grey.translucent,
+    color: Color.fromARGB(255, 81, 95, 102),
     fontSize: 17.0,
     fontFamily: 'Khula',
     fontWeight: FontWeight.w600,

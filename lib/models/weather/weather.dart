@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:weatherify/constants/colors.dart';
 
 class Weather {
   double temp;
@@ -51,7 +52,7 @@ class Weather {
 
   static String getCondition(final int condition) {
     if (condition < 300) {
-      return 'thunder';
+      return 'Thunder';
     } else if (condition < 400) {
       return 'Rain';
     } else if (condition < 600) {
@@ -76,6 +77,38 @@ class Weather {
       return false;
     } else {
       return true;
+    }
+  }
+
+  static Color getTimeColor(final int hour) {
+    if (hour < 6) {
+      return WeatherColors.night;
+    } else if (hour < 18) {
+      return WeatherColors.day;
+    } else if (hour < 12) {
+      return WeatherColors.morning;
+    } else {
+      return WeatherColors.night;
+    }
+  }
+
+  static Color getConditionColor(final int condition) {
+    if (condition < 300) {
+      return ConditionColors.thunder;
+    } else if (condition < 400) {
+      return ConditionColors.rain;
+    } else if (condition < 600) {
+      return ConditionColors.rainy;
+    } else if (condition < 700) {
+      return ConditionColors.snow;
+    } else if (condition < 800) {
+      return ConditionColors.smog;
+    } else if (condition == 800) {
+      return ConditionColors.clear;
+    } else if (condition <= 804) {
+      return ConditionColors.cloudy;
+    } else {
+      return ConditionColors.error;
     }
   }
 }

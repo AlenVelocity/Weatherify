@@ -18,15 +18,18 @@ class Location {
 
       latitude = position.latitude;
       longitude = position.longitude;
+      print('latitude: $latitude');
+      print('longitude: $longitude');
       LocalStorage.storeDouble('latitude', latitude);
       LocalStorage.storeDouble('longitude', longitude);
     } catch (e) {
+      print(e);
       setDataFromLocalStorage();
     }
   }
 
   Future<void> setDataFromLocalStorage() async {
-    latitude = await LocalStorage.get<double>('latitude');
-    longitude = await LocalStorage.get<double>('longitude');
+    latitude = await LocalStorage.get('latitude') ?? 0.0;
+    longitude = await LocalStorage.get('longitude') ?? 0.0;
   }
 }
