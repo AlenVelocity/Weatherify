@@ -37,6 +37,7 @@ dependencies:
   date_time_format: ^2.0.1
   geolocator: ^8.2.0
   shared_preferences: ^2.0.13
+  http: ^0.13.4
 
 dev_dependencies:
   flutter_test:
