@@ -38,6 +38,7 @@ dependencies:
   geolocator: ^8.2.0
   shared_preferences: ^2.0.13
   http: ^0.13.4
+  font_awesome_flutter: ^9.2.0
 
 dev_dependencies:
   flutter_test:
